@@ -1,11 +1,13 @@
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
+//var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^HYPE ME$/;
+
+  console.log(request)
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -18,10 +20,24 @@ function respond() {
   }
 }
 
+
+
+var phrases = Array(
+  "KAPPAS KAPPAS TILL WE DIE",
+  "111119!!!!!",
+  "Too Hype Too Hype!",
+  "Too Proud Too Proud!",
+  "Who you wit!?!",
+  "Where are the Capri-Suns?!")
+
+// When it hits 8:07 “It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!”
+
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  //botResponse = cool();
+
+  botResponse = phrases[Math.floor(Math.random()*phrases.length)]
 
   options = {
     hostname: 'api.groupme.com',

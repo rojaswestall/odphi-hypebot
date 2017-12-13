@@ -29,5 +29,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, This is the server for HypeBot2.0");
+  this.res.end("Hey, This is the server for HypeBot3.0");
 }
