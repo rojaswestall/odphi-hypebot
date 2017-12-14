@@ -145,7 +145,7 @@ function postMessageNeos() {
 
 
 function postMessage() {
-  var botResponse, options, body, botReq;
+  var botResponse, body, botReq;
 
   //botResponse = cool();
 
