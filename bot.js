@@ -5,14 +5,14 @@ var botID = process.env.BOT_ID;
 
 
 function findWord(message, word) {
-  var wrdlen = word.length
+  var wrdlen = word.length;
   var result = false;
   var lowerMessage = message.toLowerCase();
-  var partial
+  var partial;
 
   for(i = 0; i < message.length; i++) {
     if(i+wrdlen <= message.length) {
-      partial = lowerMessage.substr(i,i+wrdlen)
+      partial = lowerMessage.substr(i,i+wrdlen);
       console.log(partial)
       if (partial === word) {
         result = true;
@@ -33,12 +33,16 @@ function respond() {
 //   worker: node worker.js
 // clock:  node clock.js
 
-  if(request.text && hypeMeRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage();
-    this.res.end();
-  } 
-  else if(request.text && findWord(request.text, "fabian")) {
+  // if(request.text && hypeMeRegex.test(request.text)) {
+  //   this.res.writeHead(200);
+  //   postMessage();
+  //   this.res.end();
+  // } else if(request.text && findWord(request.text, "fabian")) {
+  //   this.res.writeHead(200);
+  //   postMessageFabian();
+  //   this.res.end();
+  // } 
+  if (request.text && findWord(request.text, "fabian")) {
     this.res.writeHead(200);
     postMessageFabian();
     this.res.end();
@@ -106,6 +110,7 @@ function postMessageFabianHype() {
 
 }
 
+// To say fuck fabian whenever it sees Fabian in a sentence
 function postMessageFabian() {
   var botResponse, body, botReq;
 
@@ -173,6 +178,7 @@ function postMessage() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+  console.log(JSON.stringify(body));
 }
 
 

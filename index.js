@@ -15,6 +15,7 @@ router = new director.http.Router({
 server = http.createServer(function (req, res) {
   req.chunks = [];
   req.on('data', function (chunk) {
+    console.log("I'm the chunk log");
     req.chunks.push(chunk.toString());
   });
 
@@ -29,5 +30,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, This is the server for HypeBot3.0");
+  this.res.end("Hey, This is the server for HypeBot2.0");
 }
