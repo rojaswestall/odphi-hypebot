@@ -122,6 +122,7 @@ function postMessageFabian() {
 
   botReq = HTTPS.request(postOptions, function(res) {
       if(res.statusCode == 202) {
+        console.log("hit the fuck fabian function")
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
