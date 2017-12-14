@@ -42,6 +42,7 @@ function respond() {
     this.res.writeHead(200);
     postMessageFabian();
     this.res.end();
+    console.log("hit the end of res")
   } else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -111,7 +112,7 @@ function postMessageFabian() {
 
   //botResponse = cool();
 
-  botResponse = "fuck fabian"
+  botResponse = "fuck fabian";
 
   body = {
     "bot_id" : botID,
@@ -149,7 +150,7 @@ function postMessage() {
 
   //botResponse = cool();
 
-  botResponse = phrases[Math.floor(Math.random()*phrases.length)]
+  botResponse = phrases[Math.floor(Math.random()*phrases.length)];
 
   body = {
     "bot_id" : botID,
@@ -173,7 +174,6 @@ function postMessage() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
-  console.log(JSON.stringify(body));
 }
 
 
