@@ -32,6 +32,14 @@ var phrases = Array(
 
 // When it hits 8:07 “It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!”
 
+function postMessageFabian() {
+
+}
+
+function postMessageNeos() {
+  
+}
+
 function postMessage() {
   var botResponse, options, body, botReq;
 
