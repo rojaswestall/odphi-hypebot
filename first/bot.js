@@ -1,20 +1,19 @@
 var HTTPS = require('https');
-//var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
 
 function findWord(message, word) {
-  var re = new RegExp(word, "i");
-  var wrdlen = word.length;
-  var result = false;
-  var lowerMessage = message.toLowerCase();
-  var partial;
+  var re = new RegExp(word, "i"),
+      wrdlen = word.length,
+      result = false,
+      lowerMessage = message.toLowerCase(),
+      partial;
 
   for(i = 0; i < message.length; i++) {
     if(i+wrdlen <= message.length) {
       partial = lowerMessage.substr(i,i+wrdlen);
-      console.log(partial)
+      console.log(partial);
       if (re.test(partial)) {
         result = true;
         break;
@@ -30,7 +29,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       hypeMeRegex = /^HYPE ME$/;
 
-  console.log(request.text)
+  console.log(request.text);
 //   worker: node worker.js
 // clock:  node clock.js
 
@@ -42,19 +41,12 @@ function respond() {
     this.res.writeHead(200);
     postMessageFabian();
     this.res.end();
-    console.log("hit the end of res")
   } else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
 }
-
-var postOptions = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
 
 var phrases = Array(
   "KAPPAS KAPPAS TILL WE DIE",
@@ -67,52 +59,32 @@ var phrases = Array(
   "Too Kute Too Kute",
   "Sigma what, Sigma who??",
   "Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega Delta Phi!!!!",
-  "Hype yourself.")
+  "Hype yourself.");
 
 // userIDs
 // When it hits 8:07 “It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!”
 
-
-function postMessageFabianHype() {
-  var botResponse, body, botReq;
-
-  //botResponse = cool();
-
-  botResponse = phrases[Math.floor(Math.random()*phrases.length)]
-
-
-  body = {
-    "bot_id" : botID,
-    "text" : botResponse
+var postOptions = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
   };
 
-  console.log('sending ' + botResponse + ' to ' + botID);
-
-  botReq = HTTPS.request(postOptions, function(res) {
-      if(res.statusCode == 202) {
-        //neat
-      } else {
-        console.log('rejecting bad status code ' + res.statusCode);
-      }
-  });
-
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-  botReq.end(JSON.stringify(body));
-
+function postMessageFabianHype() {
 }
+
+function postMessageNeos() {
+}
+
+
+
+
 
 // To say fuck fabian whenever it sees Fabian in a sentence
 function postMessageFabian() {
-  var botResponse, body, botReq;
+  var botResponse, body, ffabesReq;
 
-  //botResponse = cool();
-
-  botResponse = "fuck fabian";
+  botResponse = "fuck fabian : )";
 
   body = {
     "bot_id" : botID,
@@ -121,7 +93,7 @@ function postMessageFabian() {
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
-  botReq = HTTPS.request(postOptions, function(res) {
+  ffabesReq = HTTPS.request(postOptions, function(res) {
       if(res.statusCode == 202) {
         console.log("hit the fuck fabian function")
         //neat
@@ -130,25 +102,20 @@ function postMessageFabian() {
       }
   });
 
-  botReq.on('error', function(err) {
+  ffabesReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
-  botReq.on('timeout', function(err) {
+  ffabesReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  botReq.end(JSON.stringify(body));
-
-}
-
-function postMessageNeos() {
-
+  ffabesReq.end(JSON.stringify(body));
 }
 
 
+
+// FOR REGULAR HYPE ME
 function postMessage() {
-  var botResponse, body, botReq;
-
-  //botResponse = cool();
+  var botResponse, body, hypeReq;
 
   botResponse = phrases[Math.floor(Math.random()*phrases.length)];
 
@@ -159,7 +126,7 @@ function postMessage() {
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
-  botReq = HTTPS.request(postOptions, function(res) {
+  hypeReq = HTTPS.request(postOptions, function(res) {
       if(res.statusCode == 202) {
         //neat
       } else {
@@ -167,13 +134,13 @@ function postMessage() {
       }
   });
 
-  botReq.on('error', function(err) {
+  hypeReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
-  botReq.on('timeout', function(err) {
+  hypeReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  botReq.end(JSON.stringify(body));
+  hypeReq.end(JSON.stringify(body));
 }
 
 
