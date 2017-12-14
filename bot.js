@@ -5,6 +5,7 @@ var botID = process.env.BOT_ID;
 
 
 function findWord(message, word) {
+  var re = new RegExp(word, "i");
   var wrdlen = word.length;
   var result = false;
   var lowerMessage = message.toLowerCase();
@@ -14,7 +15,7 @@ function findWord(message, word) {
     if(i+wrdlen <= message.length) {
       partial = lowerMessage.substr(i,i+wrdlen);
       console.log(partial)
-      if (partial === word) {
+      if (re.test(partial)) {
         result = true;
         break;
       }
@@ -33,21 +34,15 @@ function respond() {
 //   worker: node worker.js
 // clock:  node clock.js
 
-  // if(request.text && hypeMeRegex.test(request.text)) {
-  //   this.res.writeHead(200);
-  //   postMessage();
-  //   this.res.end();
-  // } else if(request.text && findWord(request.text, "fabian")) {
-  //   this.res.writeHead(200);
-  //   postMessageFabian();
-  //   this.res.end();
-  // } 
-  if (request.text && findWord(request.text, "fabian")) {
+  if(request.text && hypeMeRegex.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage();
+    this.res.end();
+  } else if(request.text && findWord(request.text, "fabian")) {
     this.res.writeHead(200);
     postMessageFabian();
     this.res.end();
-  } 
-  else {
+  } else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
