@@ -10,7 +10,7 @@ function findWord(message, word) {
       lowerMessage = message.toLowerCase(),
       partial;
 
-  for(i = 0; i < message.length; i++) {
+  for(var i = 0; i < message.length; i++) {
     if(i+wrdlen <= message.length) {
       partial = lowerMessage.substr(i,i+wrdlen);
       console.log(partial);
