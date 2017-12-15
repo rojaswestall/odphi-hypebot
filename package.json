@@ -1,8 +1,8 @@
 {
-  "name": "groupme-bot-starter",
-  "version": "1.0.0",
-  "description": "Starter code for the GroupMe bot workshop at ACM@UC",
-  "author": "Noah Bass <noah@noahbass.com>",
+  "name": "odphihypebot2.0",
+  "version": "2.0.0",
+  "description": "Made according to the prophecies of Fede",
+  "author": "Gabe Rojas-Westall",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
