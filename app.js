@@ -17,7 +17,7 @@ const router = new director.http.Router({
 const devMode = process.argv[2] === '--dev';
 
 var am = new CronJob({
-  cronTime: "01 40 14 * * *", //AM 8:07:01
+  cronTime: "30 25 15 * * *", //AM 8:07:01
   onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!"),
   start: false,
   timeZone: "America/Chicago",
@@ -25,7 +25,7 @@ var am = new CronJob({
 });
 
 var pm = new CronJob({
-  cronTime: "45 7 20 * * *", //PM 8:07:01
+  cronTime: "30 25 15 * * *", //PM 8:07:01
   onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2"),
   start: true,
   timeZone: "America/Chicago"
