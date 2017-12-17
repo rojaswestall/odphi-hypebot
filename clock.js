@@ -1,20 +1,66 @@
-const Worker  = require('./worker');
+require('dotenv').config();
 var CronJob = require('cron').CronJob;
+const https = require('https');
+
+// Same as BOT sendMessage
+sendMessage = function(messageText) {
+    // Get the GroupMe bot id saved in `.env`
+    const botId = process.env.BOT_ID;
+
+    const options = {
+        hostname: 'api.groupme.com',
+        path: '/v3/bots/post',
+        method: 'POST'
+    };
+
+    const body = {
+        bot_id: botId,
+        text: messageText
+    };
+
+    // Make the POST request to GroupMe with the http module
+    const botRequest = https.request(options, function(response) {
+        if (response.statusCode !== 202) {
+            console.log('Rejecting bad status code ' + response.statusCode);
+            //console.log(response);
+        } else {
+            //console.log(response);
+        }
+    });
+
+    // On error
+    botRequest.on('error', function(error) {
+        console.log('Error posting message ' + JSON.stringify(error));
+    });
+
+    // On timeout
+    botRequest.on('timeout', function(error) {
+        console.log('Timeout posting message ' + JSON.stringify(error));
+    });
+
+    // Finally, send the body to GroupMe as a string
+    botRequest.end(JSON.stringify(body));
+};
+
 
 var am = new CronJob({
-  cronTime: "10 02 13 * * *", //AM 8:07:01
-  onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!"),
+  cronTime: "10 20 13 * * *", //AM 8:07:01
+  onTick: function(){
+  	console.log("am hit");
+  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+  },
   start: true,
   timeZone: "America/Chicago",
-  runOnInit: true
+  runOnInit: false
 });
 
 var pm = new CronJob({
-  cronTime: "1 7 20 * * *", //PM 8:07:01
-  onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!"),
+  cronTime: "30 20 13 * * *", //PM 8:07:01
+  onTick: function(){
+  	console.log("am hit");
+  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2");
+  },
   start: true,
-  timeZone: "America/Chicago"
+  timeZone: "America/Chicago",
+  runOnInit: false
 });
-
-// am.start();
-// pm.start();

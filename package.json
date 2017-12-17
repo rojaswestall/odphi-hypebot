@@ -6,7 +6,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "node app.js --dev"
+    "dev": "node app.js --dev",
+    "clock": "node clock.js"
   },
   "engines": {
     "node": ">=4.0.0"
