@@ -2,6 +2,7 @@ require('dotenv').config();
 var CronJob = require('cron').CronJob;
 const https = require('https');
 
+console.log('RUNNING! clock')
 // Same as BOT sendMessage
 sendMessage = function(messageText) {
     // Get the GroupMe bot id saved in `.env`
@@ -44,7 +45,7 @@ sendMessage = function(messageText) {
 
 
 var am = new CronJob({
-  cronTime: "10 25 13 * * *", //AM 8:07:01
+  cronTime: "00 33 13 * * *", //AM 8:07:01
   onTick: function(){
   	console.log("am hit");
   	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
@@ -55,7 +56,7 @@ var am = new CronJob({
 });
 
 var pm = new CronJob({
-  cronTime: "30 25 13 * * *", //PM 8:07:01
+  cronTime: "30 33 13 * * *", //PM 8:07:01
   onTick: function(){
   	console.log("pm hit");
   	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2");
@@ -64,3 +65,10 @@ var pm = new CronJob({
   timeZone: "America/Chicago",
   runOnInit: false
 });
+
+
+
+
+
+
+
