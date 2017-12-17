@@ -44,7 +44,7 @@ sendMessage = function(messageText) {
 
 
 var am = new CronJob({
-  cronTime: "10 20 13 * * *", //AM 8:07:01
+  cronTime: "10 25 13 * * *", //AM 8:07:01
   onTick: function(){
   	console.log("am hit");
   	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
@@ -55,9 +55,9 @@ var am = new CronJob({
 });
 
 var pm = new CronJob({
-  cronTime: "30 20 13 * * *", //PM 8:07:01
+  cronTime: "30 25 13 * * *", //PM 8:07:01
   onTick: function(){
-  	console.log("am hit");
+  	console.log("pm hit");
   	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2");
   },
   start: true,
