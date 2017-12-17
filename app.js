@@ -44,5 +44,5 @@ var port = Number(process.env.PORT || 5000);
 const server = new Server(router, devMode, port);
 server.serve();
 
-console.log('am status', am.running); // job1 status true
-console.log('pm status', pm.running);
+// console.log('am status', am.running); 
+// console.log('pm status', pm.running);
