@@ -16,23 +16,23 @@ const router = new director.http.Router({
 // Check if the `--dev` flag was passed
 const devMode = process.argv[2] === '--dev';
 
-var am = new CronJob({
-  cronTime: "30 25 15 * * *", //AM 8:07:01
-  onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!"),
-  start: false,
-  timeZone: "America/Chicago",
-  runOnInit: false
-});
+// var am = new CronJob({
+//   cronTime: "30 25 15 * * *",
+//   onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!"),
+//   start: false,
+//   timeZone: "America/Chicago",
+//   runOnInit: false
+// });
 
-var pm = new CronJob({
-  cronTime: "30 25 15 * * *", //PM 8:07:01
-  onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2"),
-  start: true,
-  timeZone: "America/Chicago"
-});
+// var pm = new CronJob({
+//   cronTime: "30 25 15 * * *",
+//   onTick: Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2"),
+//   start: true,
+//   timeZone: "America/Chicago"
+// });
 
-console.log('am status', am.running); // job1 status undefined
-console.log('pm status', pm.running); // job2 status undefined
+// console.log('am status', am.running); 
+// console.log('pm status', pm.running); 
 
 // am.start(); // job 1 started
 
