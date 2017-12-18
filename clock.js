@@ -2,9 +2,9 @@ require('dotenv').config();
 var CronJob = require('cron').CronJob;
 const https = require('https');
 
-console.log('RUNNING! clock')
+console.log('RUNNING! clock');
 // Same as BOT sendMessage
-sendMessage = function(messageText) {
+var sendMessage = function(messageText) {
     // Get the GroupMe bot id saved in `.env`
     const botId = process.env.BOT_ID;
 
