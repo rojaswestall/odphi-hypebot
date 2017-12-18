@@ -48,8 +48,8 @@ var sendMessage = function(messageText) {
 
 
 var am = new CronJob({
-  // cronTime: "01 07 08 * * *", //AM 8:07:01
-  cronTime: "01 12 08 * * *",
+  cronTime: "01 07 08 * * *", //AM 8:07:01
+  // cronTime: "01 12 08 * * *", // Used for testing
   onTick: function(){
   	console.log("am hit");
   	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
