@@ -63,7 +63,7 @@ var pm = new CronJob({
   cronTime: "01 07 20 * * *", //PM 8:07:01
   onTick: function(){
   	console.log("pm hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2");
+  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
   },
   start: true,
   timeZone: "America/Chicago",
