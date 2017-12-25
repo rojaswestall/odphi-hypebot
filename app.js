@@ -52,7 +52,8 @@ var am = new CronJob({
   // cronTime: "01 12 08 * * *", // Used for testing
   onTick: function(){
   	console.log("am hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+  	// sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    sendMessage("Merry Christmas bros!!!! Have fun with your fams : )");
   },
   start: true,
   timeZone: "America/Chicago",
@@ -63,7 +64,8 @@ var pm = new CronJob({
   cronTime: "01 07 20 * * *", //PM 8:07:01
   onTick: function(){
   	console.log("pm hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+  	// sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
   },
   start: true,
   timeZone: "America/Chicago",
