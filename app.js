@@ -72,6 +72,17 @@ var pm = new CronJob({
   runOnInit: false
 });
 
+var newYear = new CronJob({
+  cronTime: "00 00 00 * * *",
+  onTick: function(){
+  	console.log("pm hit");
+  	sendMessage("HAPPY NEW YEAR BROS!!!!");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
+
 
 
 
