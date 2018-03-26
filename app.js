@@ -73,7 +73,7 @@ var hypemsgs = Array(
 
 var pm = new CronJob({
   //cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "01 00 17 * * *",
+  cronTime: "01 02 17 * * *",
   onTick: function(){
     console.log("pm hit");
     sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
@@ -86,7 +86,7 @@ var pm = new CronJob({
 
 var pm2 = new CronJob({
   //cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "02 00 17 * * *",
+  cronTime: "02 02 17 * * *",
   onTick: function(){
     console.log("pm hit");
     sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
@@ -99,7 +99,7 @@ var pm2 = new CronJob({
 
 var pm3 = new CronJob({
   //cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "03 00 17 * * *",
+  cronTime: "03 02 17 * * *",
   onTick: function(){
     console.log("pm hit");
     sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
