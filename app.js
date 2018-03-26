@@ -73,7 +73,33 @@ var hypemsgs = Array(
 
 var pm = new CronJob({
   //cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "01 50 16 * * *",
+  cronTime: "01 58 16 * * *",
+  onTick: function(){
+    console.log("pm hit");
+    sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
+    // sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
+
+var pm2 = new CronJob({
+  //cronTime: "01 07 20 * * *", //PM 8:07:01
+  cronTime: "02 58 16 * * *",
+  onTick: function(){
+    console.log("pm hit");
+    sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
+    // sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
+
+var pm3 = new CronJob({
+  //cronTime: "01 07 20 * * *", //PM 8:07:01
+  cronTime: "03 58 16 * * *",
   onTick: function(){
     console.log("pm hit");
     sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
