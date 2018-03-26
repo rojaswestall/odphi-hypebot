@@ -7,3 +7,37 @@ ODPhi GroupMe HypeBot2.0
 - Responds based on keyword
 - Responds based on user
 
+
+## For set up
+
+### Heroku:
+
+
+
+
+
+
+### GroupMe:
+
+
+
+
+
+
+### mLab MongoDB:
+
+1) Go to mlab.com
+2) Sign up
+3) Create new MongoDB Deployment
+4) Choose the Sandbox Plan Type (so it's free to use) and continue
+⋅⋅* I used amazon and chose my server location to be in virginia
+5) Name the database.
+⋅⋅* I named it "hypebotdb", but it can be anything. You just have to be consistent with your database name whenever you need to use it
+6) Click on your new mongodb instance and create a new collection. Name it "tasks"
+7) Click on the Users tab and create a new user.
+..* I named it hypebotadmin and made the password 1987
+
+[This is the video I used to setup mongodb](https://youtu.be/GDqtv1eGGpA)
+
+
+
