@@ -47,12 +47,16 @@ var sendMessage = function(messageText) {
 };
 
 
+// For info on cron jobs:
+// https://github.com/kelektiv/node-cron
+
+// This cronjob would send the tasks that still need to be accomplished
+// Pulls data from hypebotdb
 var am = new CronJob({
   cronTime: "01 07 08 * * *", //AM 8:07:01
-  // cronTime: "01 12 08 * * *", // Used for testing
   onTick: function(){
-  	console.log("am hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    console.log("am hit");
+    sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
     // sendMessage("Merry Christmas bros!!!! Have fun with your fams : )");
   },
   start: true,
@@ -60,11 +64,19 @@ var am = new CronJob({
   runOnInit: false
 });
 
+// This is for night hype messages at 8:07
+var hypemsgs = Array(
+  "It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!",
+  "GET HYPE!!!",
+  "ONE NINE!"
+  );
+
 var pm = new CronJob({
-  cronTime: "01 07 20 * * *", //PM 8:07:01
+  //cronTime: "01 07 20 * * *", //PM 8:07:01
+  cronTime: "01 50 16 * * *",
   onTick: function(){
-  	console.log("pm hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    console.log("pm hit");
+    sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
     // sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
   },
   start: true,
@@ -72,20 +84,29 @@ var pm = new CronJob({
   runOnInit: false
 });
 
-// var newYear = new CronJob({
-//   cronTime: "00 00 00 * * *",
-//   onTick: function(){
-//   	console.log("pm hit");
-//   	sendMessage("HAPPY NEW YEAR BROS!!!!");
-//   },
-//   start: true,
-//   timeZone: "America/Chicago",
-//   runOnInit: false
-// });
+// Founder's Day Message
+var foundersday = new CronJob({
+  cronTime: "00 00 00 25 10 *", //Nov. 25
+  onTick: function(){
+   console.log("foundersday hit");
+   sendMessage("Happy Founder's Day bros!!!");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
 
-
-
-
+// New Years Message
+var newyears = new CronJob({
+  cronTime: "00 00 00 01 00 *",
+  onTick: function(){
+   console.log("newyears hit");
+   sendMessage("HAPPY NEW YEAR BROS!!!!");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
 
 
 

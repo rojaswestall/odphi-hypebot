@@ -43,7 +43,13 @@ var sendMessage = function(messageText) {
     botRequest.end(JSON.stringify(body));
 };
 
+var hypemsgs = Array(
+  "It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!",
+  "GET HYPE!!!",
+  "ONE NINE!",
+  );
 
+// This cronjob would send the tasks that still need to be accomplished
 var am = new CronJob({
   cronTime: "01 07 08 * * *", //AM 8:07:01
   onTick: function(){
@@ -55,11 +61,13 @@ var am = new CronJob({
   runOnInit: false
 });
 
+
+// This is for Knight hype messages at 8:07
 var pm = new CronJob({
   cronTime: "01 07 20 * * *", //PM 8:07:01
   onTick: function(){
   	console.log("pm hit");
-  	sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!2");
+  	sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
   },
   start: true,
   timeZone: "America/Chicago",
