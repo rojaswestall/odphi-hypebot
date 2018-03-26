@@ -10,16 +10,19 @@ ODPhi GroupMe HypeBot2.0
 
 ## For set up
 
-### Heroku:
-
-
-- To keep variables secret (like keys and secrets), config values need to be set using the Heroku command line tool:
-
 
 
 
 
 ### GroupMe:
+
+
+### Heroku:
+
+To keep variables secret (like keys and secrets), .env and .gitignore files are used so that no one can see it on GitHub. A .env file needs to be made with your BOT_ID that was made when you made your groupme bot. From the command line:
+1) Navigate to the directory for the bot
+2) 
+
 
 
 
