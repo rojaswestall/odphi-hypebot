@@ -10,9 +10,14 @@ const director = require('director');
 const Server   = require('./lib/server');
 const Bot   = require('./lib/bot');
 
+// Requiring all the models from the models directory for db
+var fs = require('fs');
+fs.readdirSync(__dirname + '/models').forEach(function(filename) {
+  if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
+});
+
 // Getting the database class:
 const TaskManager = require('./lib/hypebotdb');
-
 TaskManager.testFunction();
 
 // For info on cron jobs:

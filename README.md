@@ -73,17 +73,22 @@ https://gist.github.com/jczaplew/8307225
 
 ## Local Testing
 
-For local testing, the app can be run using
+For local testing, the app can be run locally using
 ```
 npm start
 ```
-You can then send GET (recieving messages) and POST (sending messages) requests using curl:
+To simulate sending messages as someone in the groupme, a POST request can be sent to whatever port the application is being run on. The "name" field would be the name of the person sending the message and the "text" field would be the message that they send to the group. Below, "Canis" is sending the message "HYPE ME" to the group:
 ```
-curl -X GET -H "Content-Type: application/json" -d '{"name": "Sir Canis"}' https://api.groupme.com/v3/groups?token=YOUR_ACCESS_TOKEN
+curl -X POST -H "Content-Type: application/json" -d '{"name": "Canis", "text": "HYPE ME"}' http://localhost:5000/
 ```
+
+You can send POST requests using curl regardless of whether the app is running to send messages as the bot:
+
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"name": "Sir Marchitar"}' https://api.groupme.com/v3/groups?token=YOUR_ACCESS_TOKEN
+curl -d '{"text" : "We're sending a message to our odphi groupme!", "bot_id" : "YOUR_UNIQUE_BOT_ID"}' https://api.groupme.com/v3/bots/post
 ```
+
+
 If you inlcude your bot ID in the .env file and your access token int
 
 If you make requests that make changes to the database you should be able to see those changes under collections in mlab
