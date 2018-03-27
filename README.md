@@ -7,6 +7,8 @@ ODPhi Alpha Alpha GroupMe HypeBot2.0
 - Responds based on keyword
 - Responds based on user
 
+Any questions can be directed at Gabe Rojas-Westall <rojaswestall@gmail.com>
+
 
 ## For set up
 
@@ -69,4 +71,20 @@ nano .env
 [This is the video I used to setup mongodb](https://youtu.be/GDqtv1eGGpA)
 
 
-Any questions can be directed at Gabe Rojas-Westall <rojaswestall@gmail.com>
+## Local Testing
+
+For local testing, the app can be run using
+```
+npm start
+```
+You can then send GET (recieving messages) and POST (sending messages) requests using curl:
+```
+curl -X GET -H "Content-Type: application/json" -d '{"name": "Sir Canis"}' https://api.groupme.com/v3/groups?token=YOUR_ACCESS_TOKEN
+```
+```
+curl -X POST -H "Content-Type: application/json" -d '{"name": "Sir Marchitar"}' https://api.groupme.com/v3/groups?token=YOUR_ACCESS_TOKEN
+```
+If you inlcude your bot ID in the .env file and your access token int
+
+If you make requests that make changes to the database you should be able to see those changes under collections in mlab
+
