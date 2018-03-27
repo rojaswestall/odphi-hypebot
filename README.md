@@ -48,7 +48,7 @@ touch .env
 nano .env
 ```
 
-
+https://gist.github.com/jczaplew/8307225
 
 
 
