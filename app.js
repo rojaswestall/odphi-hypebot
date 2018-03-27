@@ -4,58 +4,16 @@
 var CronJob = require('cron').CronJob;
 
 require('dotenv').config();
-const https = require('https');
 
 // For setting up and starting the server:
 const director = require('director');
 const Server   = require('./lib/server');
 const Bot   = require('./lib/bot');
 
-// const bot = new Bot();
+// Getting the database class:
+const TaskManager = require('./lib/hypebotdb');
 
-
-// Same as BOT sendMessage
-// var sendMessage = function(messageText) {
-//     // Get the GroupMe bot id saved in `.env`
-//     const botId = process.env.BOT_ID;
-
-//     const options = {
-//         hostname: 'api.groupme.com',
-//         path: '/v3/bots/post',
-//         method: 'POST'
-//     };
-
-//     const body = {
-//         bot_id: botId,
-//         text: messageText
-//     };
-
-//     // Make the POST request to GroupMe with the http module
-//     const botRequest = https.request(options, function(response) {
-//         if (response.statusCode !== 202) {
-//             console.log('Rejecting bad status code ' + response.statusCode);
-//             //console.log(response);
-//         } else {
-//             //console.log(response);
-//         }
-//     });
-
-//     // On error
-//     botRequest.on('error', function(error) {
-//         console.log('Error posting message ' + JSON.stringify(error));
-//     });
-
-//     // On timeout
-//     botRequest.on('timeout', function(error) {
-//         console.log('Timeout posting message ' + JSON.stringify(error));
-//     });
-
-//     // Finally, send the body to GroupMe as a string
-//     botRequest.end(JSON.stringify(body));
-// };
-
-
-
+TaskManager.testFunction();
 
 // For info on cron jobs:
 // https://github.com/kelektiv/node-cron
@@ -66,7 +24,7 @@ var am = new CronJob({
   cronTime: "01 07 08 * * *", //AM 8:07:01
   onTick: function(){
     console.log("am hit");
-    sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
     // sendMessage("Merry Christmas bros!!!! Have fun with your fams : )");
   },
   start: true,
@@ -82,8 +40,8 @@ var hypemsgs = Array(
   );
 
 var pm = new CronJob({
-  // cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "01 01 09 * * *",
+  cronTime: "01 07 20 * * *", //PM 8:07:01
+  // cronTime: "01 01 09 * * *",
   onTick: function(){
     console.log("pm hit");
     Bot.sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
@@ -99,7 +57,7 @@ var foundersday = new CronJob({
   cronTime: "00 00 00 25 10 *", //Nov. 25
   onTick: function(){
    console.log("foundersday hit");
-   sendMessage("Happy Founder's Day bros!!!");
+   Bot.sendMessage("Happy Founder's Day bros!!!");
   },
   start: true,
   timeZone: "America/Chicago",
@@ -111,7 +69,7 @@ var newyears = new CronJob({
   cronTime: "00 00 00 01 00 *", //Jan. 1
   onTick: function(){
    console.log("newyears hit");
-   sendMessage("HAPPY NEW YEAR BROS!!!!");
+   Bot.sendMessage("HAPPY NEW YEAR BROS!!!!");
   },
   start: true,
   timeZone: "America/Chicago",
@@ -131,7 +89,6 @@ const router = new director.http.Router({
 
 // Check if the `--dev` flag was passed
 const devMode = process.argv[2] === '--dev';
-
 
 // Start listening
 var port = Number(process.env.PORT || 5000);

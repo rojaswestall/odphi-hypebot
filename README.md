@@ -1,14 +1,33 @@
 # odphi-hypebot
-ODPhi GroupMe HypeBot2.0
+ODPhi Alpha Alpha GroupMe HypeBot2.0
 
-- Deployed with Heroku, running on one dyno but can change to run on two
-- Sends messages at 8:07 using cron jobs (can change to run scheduled/standing messages to run on two dynos)
+- Deployed with Heroku, running on one web dyno
+- Sends messages at 8:07 and on special occassions
 - Identifies regular expressions
 - Responds based on keyword
 - Responds based on user
 
 
 ## For set up
+
+*Node and npm must be installed*
+[Node](https://nodejs.org/en/download/)
+
+*The Heroku CLI must be installed*
+[Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) or if you have homebrew installed on mac:
+```
+brew install heroku/brew/heroku
+```
+
+### GitHub:
+1) Clone this repository onto your local machine:
+Navigate to the directory that you want to keep this repository, then clone and install dependencies:
+```
+git clone https://github.com/rojaswestall/odphi-hypebot.git
+cd odphi-hypbot
+npm install
+```
+
 
 ### GroupMe:
 1) Go to [https://dev.groupme.com/](https://dev.groupme.com/)
@@ -23,7 +42,7 @@ To keep variables secret (like keys and secrets), .env and .gitignore files are 
 2) Once there use the following command to make the .env file and open it with your preferred textEditior:
 ```
 touch .env
-nano
+nano .env
 ```
 
 
@@ -49,4 +68,4 @@ nano
 [This is the video I used to setup mongodb](https://youtu.be/GDqtv1eGGpA)
 
 
-
+Any questions can be directed at Gabe Rojas-Westall <rojaswestall@gmail.com>
