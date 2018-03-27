@@ -11,7 +11,7 @@ const director = require('director');
 const Server   = require('./lib/server');
 const Bot   = require('./lib/bot');
 
-const bot = new Bot();
+// const bot = new Bot();
 
 
 // Same as BOT sendMessage
@@ -83,7 +83,7 @@ var hypemsgs = Array(
 
 var pm = new CronJob({
   // cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "01 40 08 * * *",
+  cronTime: "01 57 08 * * *",
   onTick: function(){
     console.log("pm hit");
     bot.sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
