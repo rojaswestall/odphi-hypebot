@@ -13,10 +13,11 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
+    "cron": "*",
     "director": "1.2.8",
     "dotenv": "2.0.0",
-    "winston": "2.2.0",
-    "cron": "*"
+    "mongoose": "^5.0.11",
+    "winston": "2.2.0"
   },
   "devDependencies": {
     "localtunnel": "1.8.1",

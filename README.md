@@ -10,18 +10,22 @@ ODPhi GroupMe HypeBot2.0
 
 ## For set up
 
-
-
-
-
 ### GroupMe:
+1) Go to [https://dev.groupme.com/](https://dev.groupme.com/)
+2) Sign in using your groupme account that is tied to the groupme you want to put the bot in
+3)
 
 
 ### Heroku:
 
 To keep variables secret (like keys and secrets), .env and .gitignore files are used so that no one can see it on GitHub. A .env file needs to be made with your BOT_ID that was made when you made your groupme bot. From the command line:
-1) Navigate to the directory for the bot
-2) 
+1) Navigate to the cloned repository for the bot that's been downloaded to your computer (using terminal)
+2) Once there use the following command to make the .env file and open it with your preferred textEditior:
+```
+touch .env
+nano
+```
+
 
 
 
