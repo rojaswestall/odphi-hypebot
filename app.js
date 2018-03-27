@@ -83,10 +83,10 @@ var hypemsgs = Array(
 
 var pm = new CronJob({
   // cronTime: "01 07 20 * * *", //PM 8:07:01
-  cronTime: "01 57 08 * * *",
+  cronTime: "01 01 09 * * *",
   onTick: function(){
     console.log("pm hit");
-    bot.sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
+    Bot.sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
     // sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
   },
   start: true,
