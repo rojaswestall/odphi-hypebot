@@ -40,6 +40,7 @@ npm install
 To keep variables secret (like keys and secrets), .env and .gitignore files are used so that no one can see it on GitHub. A .env file needs to be made with your BOT_ID that was made when you made your groupme bot. From the command line:
 1) Navigate to the cloned repository for the bot that's been downloaded to your computer (using terminal)
 2) Once there use the following command to make the .env file and open it with your preferred textEditior:
+
 ```
 touch .env
 nano .env
