@@ -1,15 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var tasksSchema = new Schema({
-	task: String,
-	dateDue: String
+var taskSchema = new Schema({
+	taskNumber: Number,
+	task: String
 });
 
-mongoose.model('tasks', tasksSchema);
+var Task = mongoose.model('task', taskSchema);
 
-// ,
-// 	knight: {
-// 		type: Schema.ObjectID,
-// 		ref: 'users'
-// 	}
+module.exports = Task;

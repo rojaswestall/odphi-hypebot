@@ -10,17 +10,6 @@ const director = require('director');
 const Server   = require('./lib/server');
 const Bot   = require('./lib/bot');
 
-// Requiring all the models from the models directory for db
-// var mongoose = require('mongoose');
-// const conString = process.env.CONNECTION_STRING;
-// mongoose.connect(conString)
-// require('./models/users');
-// require('./models/tasks');
-
-// Getting the database class:
-const TaskManager = require('./lib/hypebotdb');
-TaskManager.testFunction();
-
 // For info on cron jobs:
 // https://github.com/kelektiv/node-cron
 
@@ -30,7 +19,7 @@ var am = new CronJob({
   cronTime: "01 07 08 * * *", //AM 8:07:01
   onTick: function(){
     console.log("am hit");
-    Bot.sendMessage("It’s time to get Hype Hype Hype Hype Hype Hype Hype Hype!!!!");
+    // Bot.sendMessage(TaskManager.Taskformatter(TaskManager.showTasks()));
     // sendMessage("Merry Christmas bros!!!! Have fun with your fams : )");
   },
   start: true,
