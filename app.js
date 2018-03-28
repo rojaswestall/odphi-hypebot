@@ -8,7 +8,9 @@ require('dotenv').config();
 // For setting up and starting the server:
 const director = require('director');
 const Server   = require('./lib/server');
-const Bot   = require('./lib/bot');
+
+// To send messages
+const Bot      = require('./lib/bot');
 
 // For info on cron jobs:
 // https://github.com/kelektiv/node-cron
