@@ -12,18 +12,22 @@ Any questions can be directed at Gabe Rojas-Westall <rojaswestall@gmail.com>
 
 ## For set up
 
-*Node and npm must be installed*
-[Node](https://nodejs.org/en/download/)
+*Node and npm must be installed:*
 
-*The Heroku CLI must be installed*
-[Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) or if you have homebrew installed on mac:
+[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+*The Heroku CLI must be installed:*
+
+[https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
+
+or if you have homebrew installed on mac:
 ```
 brew install heroku/brew/heroku
 ```
 
 ### GitHub:
 1) Clone this repository onto your local machine:
-Navigate to the directory that you want to keep this repository, then clone and install dependencies:
+Navigate to the directory that you want to keep this repository, then clone the repo and install dependencies:
 ```
 git clone https://github.com/rojaswestall/odphi-hypebot.git
 cd odphi-hypbot
@@ -78,6 +82,7 @@ For local testing, the app can be run locally using
 npm start
 ```
 To simulate sending messages as someone in the groupme, a POST request can be sent to whatever port the application is being run on. The "name" field would be the name of the person sending the message and the "text" field would be the message that they send to the group. Below, "Canis" is sending the message "HYPE ME" to the group:
+
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"name": "Canis", "text": "HYPE ME"}' http://localhost:5000/
 ```

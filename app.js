@@ -11,10 +11,11 @@ const Server   = require('./lib/server');
 const Bot   = require('./lib/bot');
 
 // Requiring all the models from the models directory for db
-var fs = require('fs');
-fs.readdirSync(__dirname + '/models').forEach(function(filename) {
-  if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
-});
+// var mongoose = require('mongoose');
+// const conString = process.env.CONNECTION_STRING;
+// mongoose.connect(conString)
+// require('./models/users');
+// require('./models/tasks');
 
 // Getting the database class:
 const TaskManager = require('./lib/hypebotdb');
