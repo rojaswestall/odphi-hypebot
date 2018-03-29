@@ -1,13 +1,18 @@
 # odphi-hypebot
 ODPhi Alpha Alpha GroupMe HypeBot2.0
 
-- Deployed with Heroku, running on one web dyno
+- Responds to messages based on key words and the user who sends the message
 - Sends messages at 8:07 and on special occassions
-- Identifies regular expressions
-- Responds based on keyword
-- Responds based on user
+- Has a built in task manager that keeps track of tasks for each user
+- Allows group to save content as pins and then view pins at anytime
 
-Any questions can be directed at Gabe Rojas-Westall <rojaswestall@gmail.com>
+
+- A groupme bot that uses node.js to interact with a groupme group message
+- Deployed with Heroku, running on one web dyno
+- Connects to a mongo database to hold tasks and pins
+- Identifies key words using regular expressions
+
+Questions??? Email me at <rojaswestall@gmail.com>
 
 
 ## For set up
