@@ -8,9 +8,12 @@ var userSchema = new Schema({
 	totalTasks: Number,
 	percentFinished: Number,
 	currentTaskNumber: Number,
-	taskIDs: [{ type: Schema.Types.ObjectId , ref: 'Task' }]
+	tasks: [ Task.schema ]
 });
 
 var User = mongoose.model('user', userSchema);
 
 module.exports = User;
+
+// FOR STORING JUST USER IDs
+// 	taskIDs: [{ type: Schema.Types.ObjectId, ref: 'Task' }]
