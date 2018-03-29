@@ -7,10 +7,13 @@ require('dotenv').config();
 
 // For setting up and starting the server:
 const director = require('director');
-const Server   = require('./lib/server');
+const Server = require('./lib/server');
 
 // To send messages
-const Bot      = require('./lib/bot');
+const Bot = require('./lib/bot');
+
+// For Tasks
+const TaskManager = require('./lib/hypebotdb');
 
 // For info on cron jobs:
 // https://github.com/kelektiv/node-cron
@@ -21,7 +24,7 @@ var am = new CronJob({
   cronTime: "01 07 08 * * *", //AM 8:07:01
   onTick: function(){
     console.log("am hit");
-    // Bot.sendMessage(TaskManager.Taskformatter(TaskManager.showTasks()));
+    TaskManager.showTasks();
     // sendMessage("Merry Christmas bros!!!! Have fun with your fams : )");
   },
   start: true,
