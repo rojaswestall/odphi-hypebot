@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var pinSchema = new Schema({
-	taskNumber: Number,
+	pinNumber: Number,
 	content: String
 });
 

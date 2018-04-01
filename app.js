@@ -13,7 +13,7 @@ const Server = require('./lib/server');
 const Bot = require('./lib/bot');
 
 // For Tasks
-const TaskManager = require('./lib/hypebotdb');
+const TaskManager = require('./lib/hypebotdb/taskbook');
 
 // For info on cron jobs:
 // https://github.com/kelektiv/node-cron
