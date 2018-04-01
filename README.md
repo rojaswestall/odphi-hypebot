@@ -6,6 +6,18 @@ ODPhi Alpha Alpha GroupMe HypeBot2.0
 - Has a built in task manager that keeps track of tasks for each user
 - Allows group to save content as pins and then view pins at anytime
 
+Instructions on how to use the bot from the group message:
+
+Add new Knight to TaskBook: "New Knight - <knightname>"
+Remove a Knight from TaskBook: "Remove Knight - <knightname>"
+Add a task for a Knight: "Add Task - <knightname>: TASK"
+Remove a task for a Knight: "Remove Task - <knightname>: TASK#"
+See all tasks: "Show Tasks"
+See tasks for a bro: "Show Tasks - <knightname>"
+See stats: "Show Stats"
+See stats for a bro: "Show Stats - <knightname>"
+Instructions: "Instructions"
+
 
 - A groupme bot that uses node.js to interact with a groupme group message
 - Deployed with Heroku, running on one web dyno
