@@ -6,6 +6,6 @@ var pinSchema = new Schema({
 	content: String
 });
 
-var Task = mongoose.model('pin', pinSchema);
+var Pin = mongoose.model('pin', pinSchema);
 
 module.exports = Pin;
