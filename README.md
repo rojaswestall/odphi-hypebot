@@ -1,33 +1,47 @@
 # odphi-hypebot
-ODPhi Alpha Alpha GroupMe HypeBot2.0
+**ODPhi Alpha Alpha GroupMe HypeBot2.0:**
 
 - Responds to messages based on key words and the user who sends the message
 - Sends messages at 8:07 and on special occassions
 - Has a built in task manager that keeps track of tasks for each user
 - Allows group to save content as pins and then view pins at anytime
 
-Instructions on how to use the bot from the group message:
+**Instructions on how to use the bot from the group message:**
 
-Add new Knight to TaskBook: "New Knight - <knightname>"
-Remove a Knight from TaskBook: "Remove Knight - <knightname>"
-Add a task for a Knight: "Add Task - <knightname>: TASK"
-Remove a task for a Knight: "Remove Task - <knightname>: TASK#"
-See all tasks: "Show Tasks"
-See tasks for a bro: "Show Tasks - <knightname>"
-See stats: "Show Stats"
-See stats for a bro: "Show Stats - <knightname>"
-Instructions: "Instructions"
+...Add new Knight to TaskBook: "New Knight - <knightname>"
 
+...Remove a Knight from TaskBook: "Remove Knight - <knightname>"
+
+...Add a task for a Knight: "Add Task - <knightname>: TASK"
+
+...Remove a task for a Knight: "Remove Task - <knightname>: TASK#"
+
+...See all tasks: "Show Tasks"
+
+...See tasks for a bro: "Show Tasks - <knightname>"
+
+...See stats: "Show Stats"
+
+...See stats for a bro: "Show Stats - <knightname>"
+
+...Instructions: "Instructions"
+
+**On the tech side:**
 
 - A groupme bot that uses node.js to interact with a groupme group message
 - Deployed with Heroku, running on one web dyno
 - Connects to a mongo database to hold tasks and pins
 - Identifies key words using regular expressions
 
-Questions??? Email me at <rojaswestall@gmail.com>
+Questions? Email me at <rojaswestall@gmail.com>
 
 
-## For set up
+
+
+
+
+
+## For set up and testing set up
 
 *Node and npm must be installed:*
 
@@ -51,29 +65,33 @@ cd odphi-hypbot
 npm install
 ```
 
+### Heroku:
+
 
 ### GroupMe:
 1) Go to [https://dev.groupme.com/](https://dev.groupme.com/)
 2) Sign in using your groupme account that is tied to the groupme you want to put the bot in
-3)
+3) Click on the bots tab
+4) Click on create new bot
+5) Fill in the information for your bot:
 
+...For the callback URL, go to your heroku account and 
 
-### Heroku:
+NEED SCREENSHOT
 
-To keep variables secret (like keys and secrets), .env and .gitignore files are used so that no one can see it on GitHub. A .env file needs to be made with your BOT_ID that was made when you made your groupme bot. From the command line:
-1) Navigate to the cloned repository for the bot that's been downloaded to your computer (using terminal)
-2) Once there use the following command to make the .env file and open it with your preferred textEditior:
+...For the avatar URL, choose your own or you can use the basic ΩΔΦ avatar below from me by using:
+...[https://gist.github.com/jczaplew/8307225](https://gist.github.com/jczaplew/8307225)
 
-```
-touch .env
-nano .env
-```
-
-https://gist.github.com/jczaplew/8307225
+NEED TO INSERT LOGO
+...![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "ΩΔΦ Logo")
 
 
 
 
+### Hide your keys:
+Still need to do this, but this gist should have the answers:
+
+[https://gist.github.com/jczaplew/8307225](https://gist.github.com/jczaplew/8307225)
 
 
 ### mLab MongoDB:
@@ -90,6 +108,12 @@ https://gist.github.com/jczaplew/8307225
 - I named it hypebotadmin and made the password 1987
 
 [This is the video I used to setup mongodb](https://youtu.be/GDqtv1eGGpA)
+
+
+
+
+
+
 
 
 ## Local Testing
@@ -114,4 +138,19 @@ curl -d '{"text" : "We're sending a message to our odphi groupme!", "bot_id" : "
 If you inlcude your bot ID in the .env file and your access token int
 
 If you make requests that make changes to the database you should be able to see those changes under collections in mlab
+
+
+
+
+
+
+
+
+## Future Work
+
+-Put bot in mutiple groups (maybe just with a secretary and president), therefore tasks can be added without spamming the main group
+-Hide group keys and secrets if the bot is deployed through GitHub
+-Calendar Reminders hooked up to Google Calendars
+-Connecting with google sheets to record study hours and keep a ledger of tasks
+-Connect bot to chapter bank account to easily see status and be notified if the chapter card is used
 

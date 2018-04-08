@@ -21,7 +21,7 @@ const TaskManager = require('./lib/hypebotdb/taskbook');
 // This cronjob would send the tasks that still need to be accomplished
 // Pulls data from hypebotdb
 var am = new CronJob({
-  cronTime: "01 07 08 * * *", //AM 8:07:01
+  cronTime: "00 07 08 * * *", //AM 8:07:00
   onTick: function(){
     console.log("am hit");
     TaskManager.showTasks();
@@ -40,12 +40,22 @@ var hypemsgs = Array(
   );
 
 var pm = new CronJob({
-  cronTime: "01 07 20 * * *", //PM 8:07:01
+  cronTime: "00 07 20 * * 1-6", //PM 8:07:00 mon-sat
   // cronTime: "01 01 09 * * *",
   onTick: function(){
-    console.log("pm hit");
     Bot.sendMessage(hypemsgs[Math.floor(Math.random()*hypemsgs.length)]);
     // sendMessage("Feliz Noche Buena! Remember, always keep the hype : )");
+  },
+  start: true,
+  timeZone: "America/Chicago",
+  runOnInit: false
+});
+
+// Service and Study Hours
+var serviceAndStudyHoursReminder = new CronJob({
+  cronTime: "00 07 20 * * 0", //PM 8:07:00 only on sundays
+  onTick: function(){
+   Bot.sendMessage("Reminder to report your service and study hours for this week 🙂: \n \n Study Hours: https://docs.google.com/spreadsheets/d/17qQswsqfvqrlOHVPbrn7mViX7omIanLJy146DcyQ2dk/edit#gid=0 \n Service: https://docs.google.com/spreadsheets/d/1GT5YeNzqa1laj0uPWFc-Iez3r-xK2AacKH8NxZbZY60/edit#gid=0");
   },
   start: true,
   timeZone: "America/Chicago",
@@ -75,6 +85,8 @@ var newyears = new CronJob({
   timeZone: "America/Chicago",
   runOnInit: false
 });
+
+https://docs.google.com/spreadsheets/d/17qQswsqfvqrlOHVPbrn7mViX7omIanLJy146DcyQ2dk/edit#gid=0
 
 
 
