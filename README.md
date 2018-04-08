@@ -8,23 +8,15 @@
 
 **Instructions on how to use the bot from the group message:**
 
-   Add new Knight to TaskBook: "New Knight - knightname"
-
-   Remove a Knight from TaskBook: "Remove Knight - knightname"
-
-   Add a task for a Knight: "Add Task - knightname: TASK"
-
-   Remove a task for a Knight: "Remove Task - knightname: TASK#"
-
-   See all tasks: "Show Tasks"
-
-   See tasks for a bro: "Show Tasks - knightname"
-
-   See stats: "Show Stats"
-
-   See stats for a bro: "Show Stats - knightname"
-
-   Instructions: "Instructions"
+- Add new Knight to TaskBook: "New Knight - knightname"
+- Remove a Knight from TaskBook: "Remove Knight - knightname"
+- Add a task for a Knight: "Add Task - knightname: TASK"
+- Remove a task for a Knight: "Remove Task - knightname: TASK#"
+- See all tasks: "Show Tasks"
+- See tasks for a bro: "Show Tasks - knightname"
+- See stats: "Show Stats"
+- See stats for a bro: "Show Stats - knightname"
+- Instructions: "Instructions"
 
 **On the tech side:**
 
@@ -77,13 +69,14 @@ npm install
 
    For the callback URL, go to your heroku account and 
 
-NEED SCREENSHOT
+   NEED SCREENSHOT
 
    For the avatar URL, choose your own or you can use the basic ΩΔΦ avatar below from me by using:
    [https://gist.github.com/jczaplew/8307225](https://gist.github.com/jczaplew/8307225)
-NEED THE LINK
 
-NEED TO INSERT LOGO
+   NEED THE LINK
+
+   NEED TO INSERT LOGO
    ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "ΩΔΦ Logo")
 
 
