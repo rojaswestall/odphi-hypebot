@@ -86,8 +86,6 @@ var newyears = new CronJob({
   runOnInit: false
 });
 
-https://docs.google.com/spreadsheets/d/17qQswsqfvqrlOHVPbrn7mViX7omIanLJy146DcyQ2dk/edit#gid=0
-
 
 
 

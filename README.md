@@ -145,6 +145,6 @@ If you make requests that make changes to the database you should be able to see
 - Put bot in mutiple groups (maybe just with a secretary and president), therefore tasks can be added without spamming the main group
 - Hide group keys and secrets if the bot is deployed through GitHub
 - Calendar Reminders hooked up to Google Calendars
-- Connecting with google sheets to record study hours and keep a ledger of tasks
+- Connecting with google sheets to record study and service hours and keep a ledger of tasks
 - Connect bot to chapter bank account to easily see status and be notified if the chapter card is used
 
