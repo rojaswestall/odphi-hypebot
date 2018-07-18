@@ -7,8 +7,7 @@ var userSchema = new Schema({
 	tasksCompleted: Number,
 	totalTasks: Number,
 	percentFinished: Number,
-	currentTaskNumber: Number,
-	tasks: [ Task.schema ]
+	currentTaskNumber: Number
 });
 
 var User = mongoose.model('user', userSchema);

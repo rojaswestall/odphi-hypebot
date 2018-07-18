@@ -16,6 +16,10 @@
 - See tasks for a bro: "Show Tasks - knightname"
 - See stats: "Show Stats"
 - See stats for a bro: "Show Stats - knightname"
+- Save a pin: "Add Pin - pincontent"
+- Remove a pin: "Remove Pin - pin#"
+- Show all pins: "Show Pins"
+- Clear all pins: "Clear Pins"
 - Instructions: "Instructions"
 
 **On the tech side:**
@@ -33,7 +37,7 @@ Questions? Email me at <rojaswestall@gmail.com>
 
 
 
-## For set up and testing set up
+## For set up and dev set up
 
 *Node and npm must be installed:*
 
@@ -97,9 +101,10 @@ Still need to do this, but this gist should have the answers:
 - I used amazon and chose my server location to be in virginia
 5) Name the database.
 - I named it "hypebotdb", but it can be anything. You just have to be consistent with your database name whenever you need to use it
-6) Click on your new mongodb instance and create a new collection. Name it "tasks"
-7) Click on the Users tab and create a new user.
+6) Click on the Users tab and create a new user.
 - I named it hypebotadmin and made the password 1987
+
+Any time that a message is sent that makes changes to the database (such as "New knight - Jaime" or "Add task - Gaurijo: Find a service site"), those changes will be reflected in the collections tab of mLab.
 
 [This is the video I used to setup mongodb](https://youtu.be/GDqtv1eGGpA)
 
@@ -125,13 +130,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"name": "Canis", "text": "
 You can send POST requests using curl regardless of whether the app is running to send messages as the bot:
 
 ```
-curl -d '{"text" : "We're sending a message to our odphi groupme!", "bot_id" : "YOUR_UNIQUE_BOT_ID"}' https://api.groupme.com/v3/bots/post
+curl -d '{"text" : "We're sending a message to our odphi groupme as our bot!", "bot_id" : "YOUR_UNIQUE_BOT_ID"}' https://api.groupme.com/v3/bots/post
 ```
-
-
-If you inlcude your bot ID in the .env file and your access token int
-
-If you make requests that make changes to the database you should be able to see those changes under collections in mlab
 
 
 
