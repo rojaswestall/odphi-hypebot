@@ -14,7 +14,7 @@
 - Remove a task for a Knight: `Remove Task - knightname: TASK#`
 - See all tasks: `Show Tasks`
 - See tasks for a bro: `Show Tasks - knightname`
-- See stats: "Show Stats"
+- See stats: `Show Stats`
 - See stats for a bro: `Show Stats - knightname`
 - Save a pin: `Add Pin - pincontent`
 - Remove a pin: `Remove Pin - pin#`
