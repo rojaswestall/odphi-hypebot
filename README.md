@@ -100,7 +100,7 @@ I still need to figure this out but I'll be doing this soon. My goal is to conve
    For the avatar URL, choose your own or you can use the basic ΩΔΦ avatar below from me by using this url:
    [https://i.imgur.com/WczHVac.png](https://i.imgur.com/WczHVac.png)
 
-   ![Domain Name](https://i.imgur.com/WczHVac.png)
+   ![ODPhi Crest](https://i.imgur.com/WczHVac.png)
 
 6. Once your bot is made, find the Bot ID and copy it to your clipboard. 
 
@@ -108,12 +108,7 @@ I still need to figure this out but I'll be doing this soon. My goal is to conve
 
 7. Go to setting for your app in Heroku and add a new Config Var. Click on Reveal Config Vars and paste your BOT ID into the value field. In the key field type `BOT_ID`. Add the Config Var
 
-![Bot Info](https://i.imgur.com/Z4Ad5cs.png)
-
-### Hide your keys:
-Still need to do this, but this gist should have the answers:
-
-[https://gist.github.com/jczaplew/8307225](https://gist.github.com/jczaplew/8307225)
+![Config Vars](https://i.imgur.com/Z4Ad5cs.png)
 
 ### mLab MongoDB:
 1. Go to mlab.com
@@ -139,6 +134,11 @@ This is the [video](https://youtu.be/GDqtv1eGGpA) I used to setup mongodb, howev
 You're done! Try sending `HYPE ME` to your group with the bot.
 
 Any time that a message is sent that makes changes to the database (such as `New knight - Jaime` or `Add task - Gaurijo: Find a service site`), those changes will be reflected in the collections tab of mLab.
+
+### Hide your keys:
+Still need to do this, but this gist should have the answers:
+
+[https://gist.github.com/jczaplew/8307225](https://gist.github.com/jczaplew/8307225)
 
 ### To add custom behavior
 - To add cron jobs (code that will run at a certain time) open `app.js` and add your own cron jobs
