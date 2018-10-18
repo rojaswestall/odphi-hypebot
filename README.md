@@ -1,6 +1,6 @@
 # odphi-hypebot
 
-See the new hypebot which is currently in production [here](https://github.com/rojaswestall/hypebot)
+See the new hypebot which is currently in development [here](https://github.com/rojaswestall/hypebot)
 
 **ODPhi Alpha Alpha GroupMe HypeBot2.0:**
 
