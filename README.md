@@ -1,4 +1,7 @@
 # odphi-hypebot
+
+See the new hypebot which is currently in production [here](https://github.com/rojaswestall/hypebot)
+
 **ODPhi Alpha Alpha GroupMe HypeBot2.0:**
 
 - Responds to messages based on key words and the user who sends the message
